@@ -3,11 +3,12 @@ import matplotlib.pyplot as plt
 
 def plotter_main(file_name):
     df = pd.read_csv(file_name)
-    average_height = df["point_true_height"].mean()
     #Terrain
     plt.plot(df["total_distance"], df["point_true_height"], marker="o", linestyle=":", color="brown")
     #Average
+    average_height = df["point_true_height"].mean()
     plt.axhline(y=average_height, color='orange', linestyle='-') # label=f'Average Height = {average_height:.2f}')
+    
     plt.title("2D map")
     plt.xlabel("Distance in meters")
     plt.ylabel("Height")

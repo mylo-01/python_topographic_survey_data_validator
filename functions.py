@@ -10,26 +10,14 @@ def pandas_working():
 temp_point_dictionary = {} #Dictionary for information for every point.
 # Test list
 point_dictionary_list = [] #List of "rows"
-'''
-point_dictionary_list = [
-                        {"name": "A", "instrument_reading": 0.30},
-                        {"name": "B", "instrument_reading": 1.42},
-                        {"name": "C", "instrument_reading": 0.87},
-                        {"name": "D", "instrument_reading": 1.65},
-                        {"name": "E", "instrument_reading": 0.55},
-                        {"name": "F", "instrument_reading": 1.98},
-                        {"name": "G", "instrument_reading": 0.12},
-                        {"name": "H", "instrument_reading": 1.20},
-                        {"name": "I", "instrument_reading": 0.75},
-                        {"name": "J", "instrument_reading": 1.33}
-                        ]
-'''
 processed_point_dictionary_list = []
 
 
 def get_base_data():
-    base_height = float(input("What is the initial reference point elevation? "))
-    print(f"You inserted {base_height} as the value.")
+    base_height = float(input("What is the initial reference point of elevation? "))
+    base_reading = float(input("What the instrument reading to the reference point? "))
+    print(f"You inserted {base_height} as reference and {base_reading} as reading")
+    base_height += base_reading
     return base_height
 
 def csv_get_base_data(document_name):
